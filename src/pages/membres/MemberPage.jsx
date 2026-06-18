@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { FiArrowLeft, FiMessageSquare } from 'react-icons/fi'
 import Navbar from '../../components/sections/Navbar'
 import Footer from '../../components/sections/Footer'
 import Breadcrumb from '../../components/ui/Breadcrumb'
@@ -12,18 +13,21 @@ const MemberPage = () => {
 
   if (!member) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white">
+      <div className="min-h-screen flex flex-col bg-white">
         <Navbar />
-        <div className="text-center py-40 px-6">
-          <div className="text-6xl mb-6">🔍</div>
-          <h1 className="text-3xl font-black text-gray-900 mb-4">Membre introuvable</h1>
-          <p className="text-gray-500 mb-8">Ce profil n'existe pas ou a été déplacé.</p>
-          <button
-            onClick={() => navigate('/apropos')}
-            className="bg-gradient-to-r from-red-500 to-red-600 text-white font-bold px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-lg shadow-red-200/60"
-          >
-            ← Retour à l'équipe
-          </button>
+        <div className="flex-1 flex items-center justify-center text-center py-24 px-6">
+          <div>
+            <p className="text-5xl font-black text-gray-100 mb-4 select-none">404</p>
+            <h1 className="text-2xl font-black text-gray-900 mb-3">Membre introuvable</h1>
+            <p className="text-gray-500 mb-8">Ce profil n'existe pas ou a été déplacé.</p>
+            <button
+              onClick={() => navigate('/apropos')}
+              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+            >
+              <FiArrowLeft className="w-4 h-4" />
+              Retour à l'équipe
+            </button>
+          </div>
         </div>
         <Footer />
       </div>
@@ -34,24 +38,23 @@ const MemberPage = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-red-950/30 to-gray-900 pt-28 pb-0">
-        {/* Déco lumière gauche */}
-        <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-transparent via-red-500 to-transparent opacity-40" />
-        {/* Halo rouge bas */}
-        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-2/3 h-24 bg-red-500/20 blur-3xl rounded-full" />
+      {/* Hero — dark header with photo */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-red-950/25 to-gray-900 pt-28 pb-0">
+        <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-transparent via-red-500/40 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center md:items-end gap-8 md:gap-10 pb-0">
+          <div className="flex flex-col md:flex-row items-center md:items-end gap-8 pb-0">
 
-            {/* Photo contenue */}
+            {/* Photo */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.6 }}
               className="flex-shrink-0"
             >
-              <div className="w-44 h-56 sm:w-52 sm:h-64 md:w-60 md:h-72 rounded-2xl overflow-hidden border-2 border-red-500/30 shadow-2xl shadow-red-500/30">
+              <div className="w-40 h-52 sm:w-48 sm:h-60 md:w-56 md:h-68 rounded-xl overflow-hidden border border-red-500/20 shadow-2xl shadow-black/40"
+                style={{ height: 'min(272px, 35vw)' }}>
                 <img
                   src={member.image}
                   alt={member.name}
@@ -60,113 +63,110 @@ const MemberPage = () => {
               </div>
             </motion.div>
 
-            {/* Texte */}
-            <div className="text-center md:text-left pb-12">
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
+            {/* Text */}
+            <div className="text-center md:text-left pb-10">
+              <motion.p
+                initial={{ opacity: 0, y: -12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/40 text-red-300 text-xs font-semibold px-4 py-2 rounded-full mb-5 tracking-widest uppercase backdrop-blur-sm"
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 bg-red-600/15 border border-red-500/25 text-red-300 text-[11px] font-semibold px-3 py-1.5 rounded-full mb-4 tracking-widest uppercase backdrop-blur-sm"
               >
-                <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
                 Membre Fondateur
-              </motion.div>
+              </motion.p>
               <motion.h1
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-3"
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-2 leading-tight"
               >
                 {member.name}
               </motion.h1>
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.35 }}
-                className="text-red-400 font-semibold text-lg mb-4"
+                transition={{ duration: 0.6, delay: 0.28 }}
+                className="text-red-400 font-semibold text-base mb-3"
               >
                 {member.role}
               </motion.p>
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.5 }}
-                className="text-gray-300 text-base italic max-w-2xl"
+                transition={{ duration: 0.6, delay: 0.42 }}
+                className="text-gray-400 text-sm italic max-w-xl"
               >
                 "{member.tagline}"
               </motion.p>
             </div>
           </div>
         </div>
-
-        {/* Dégradé bas → blanc */}
-        <div className="h-16 bg-gradient-to-t from-white to-transparent" />
       </section>
 
-      <Breadcrumb items={[{ label: 'Accueil', to: '/' }, { label: 'À propos', to: '/apropos' }, { label: member.name }]} />
+      <Breadcrumb
+        items={[
+          { label: 'Accueil', to: '/' },
+          { label: 'À propos', to: '/apropos' },
+          { label: member.name },
+        ]}
+      />
 
       {/* Bio */}
-      <section className="py-10 md:py-20 max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="py-12 md:py-16 max-w-3xl mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-12"
         >
-          <span className="text-red-500 font-semibold text-sm tracking-widest uppercase">Profil</span>
-          <h2 className="text-3xl font-black text-gray-900 mt-2 mb-8">À propos de {member.name.split(' ').pop()}</h2>
+          <p className="section-eyebrow mb-2">Profil</p>
+          <h2 className="text-2xl font-black text-gray-900 mb-8">
+            À propos de {member.name.split(' ').pop()}
+          </h2>
           <div className="space-y-5">
             {member.bio.map((paragraph, i) => (
-              <motion.p
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="text-gray-600 leading-relaxed text-base"
-              >
+              <p key={i} className="text-gray-600 leading-relaxed text-base">
                 {paragraph}
-              </motion.p>
+              </p>
             ))}
           </div>
         </motion.div>
       </section>
 
-      {/* Compétences */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-6">
+      {/* Skills */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="mb-10"
           >
-            <span className="text-red-500 font-semibold text-sm tracking-widest uppercase">Expertise</span>
-            <h2 className="text-3xl font-black text-gray-900 mt-2">Stack Technologique</h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-rose-400 mx-auto rounded-full mt-4" />
+            <p className="section-eyebrow mb-2">Expertise</p>
+            <h2 className="text-2xl font-black text-gray-900">Stack Technologique</h2>
+            <div className="mt-3 h-px bg-gray-200 max-w-xs" />
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {member.skills.map((group, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-red-200 hover:shadow-lg hover:shadow-red-100/40 transition-all duration-300"
+                className="bg-white rounded-xl p-5 border border-gray-200"
               >
-                <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-gradient-to-br from-red-500 to-rose-400" />
+                <h3 className="font-bold text-gray-700 text-xs uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-red-600 flex-shrink-0" />
                   {group.category}
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="bg-red-50 text-red-600 border border-red-100 text-xs font-semibold px-3 py-1.5 rounded-full"
+                      className="bg-gray-50 text-gray-700 border border-gray-200 text-xs font-medium px-3 py-1 rounded-full"
                     >
                       {item}
                     </span>
@@ -178,29 +178,31 @@ const MemberPage = () => {
         </div>
       </section>
 
-      {/* Autres membres */}
-      <section className="py-20 max-w-4xl mx-auto px-6 text-center">
+      {/* CTA */}
+      <section className="py-16 max-w-3xl mx-auto px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl font-black text-gray-900 mb-4">Découvrez le reste de l'équipe</h2>
-          <p className="text-gray-500 mb-8 max-w-xl mx-auto">
+          <h2 className="text-xl font-black text-gray-900 mb-2">Découvrez le reste de l'équipe</h2>
+          <p className="text-gray-500 mb-8 text-sm">
             7 experts, 1 vision commune. Rencontrez tous les fondateurs d'AfrikTech SAS.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={() => navigate('/apropos')}
-              className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-xl shadow-red-200/60 hover:scale-105 transform"
+              className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
-              ← Voir toute l'équipe
+              <FiArrowLeft className="w-4 h-4" />
+              Voir toute l'équipe
             </button>
             <button
               onClick={() => navigate('/contact')}
-              className="border-2 border-gray-300 hover:border-red-400 text-gray-600 hover:text-red-500 font-semibold px-8 py-4 rounded-full transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 border border-gray-300 hover:border-red-400 text-gray-700 hover:text-red-600 font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
+              <FiMessageSquare className="w-4 h-4" />
               Nous contacter
             </button>
           </div>

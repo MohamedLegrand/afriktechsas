@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { FiArrowLeft, FiMail } from 'react-icons/fi'
 import Navbar from '../components/sections/Navbar'
 import Footer from '../components/sections/Footer'
 
@@ -9,32 +10,38 @@ const NotFound = () => {
       <Navbar />
       <main className="flex-1 flex items-center justify-center px-4 sm:px-6 py-24">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-md"
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-sm"
         >
-          <div className="text-8xl sm:text-9xl font-black text-red-100 leading-none mb-4 select-none">
+          <div
+            className="text-[96px] sm:text-[120px] font-black leading-none mb-6 select-none tabular-nums"
+            style={{ color: '#f3f4f6' }}
+            aria-hidden="true"
+          >
             404
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-gray-900 mb-4">
+          <h1 className="text-2xl font-black text-gray-900 mb-3">
             Page introuvable
           </h1>
-          <p className="text-gray-500 mb-8 leading-relaxed">
+          <p className="text-gray-500 text-sm mb-8 leading-relaxed">
             La page que vous cherchez n'existe pas ou a été déplacée.
             Revenez à l'accueil pour continuer votre navigation.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               to="/"
-              className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold px-7 py-3.5 rounded-full transition-all duration-300 shadow-lg shadow-red-200/60 hover:scale-105 transform text-sm"
+              className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
             >
+              <FiArrowLeft className="w-4 h-4" />
               Retour à l'accueil
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-gray-200 hover:border-red-400 text-gray-600 hover:text-red-500 font-semibold px-7 py-3.5 rounded-full transition-all duration-300 text-sm"
+              className="inline-flex items-center justify-center gap-2 border border-gray-300 hover:border-red-400 text-gray-700 hover:text-red-600 font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
             >
+              <FiMail className="w-4 h-4" />
               Nous contacter
             </Link>
           </div>

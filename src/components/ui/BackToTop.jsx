@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { FiArrowUp } from 'react-icons/fi'
 
 const BackToTop = () => {
   const [visible, setVisible] = useState(false)
@@ -14,17 +15,15 @@ const BackToTop = () => {
     <AnimatePresence>
       {visible && (
         <motion.button
-          initial={{ opacity: 0, scale: 0.7, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.7, y: 20 }}
-          transition={{ duration: 0.3 }}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 8 }}
+          transition={{ duration: 0.2 }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-50 w-11 h-11 sm:w-12 sm:h-12 bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-full shadow-xl shadow-red-300/40 hover:shadow-red-400/60 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1"
-          aria-label="Retour en haut"
+          className="fixed bottom-6 right-4 sm:bottom-8 sm:right-6 z-50 w-10 h-10 bg-white border border-gray-200 hover:border-red-400 text-gray-600 hover:text-red-600 rounded-lg shadow-md flex items-center justify-center transition-all duration-200"
+          aria-label="Retour en haut de page"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
-          </svg>
+          <FiArrowUp className="w-4 h-4" />
         </motion.button>
       )}
     </AnimatePresence>

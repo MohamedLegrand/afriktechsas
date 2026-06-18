@@ -1,18 +1,24 @@
 import { Link } from 'react-router-dom'
+import { FiChevronRight } from 'react-icons/fi'
 
 const Breadcrumb = ({ items }) => {
   return (
-    <nav className="max-w-5xl mx-auto px-4 sm:px-6 pt-6 pb-2">
-      <ol className="flex items-center flex-wrap gap-1.5 text-xs sm:text-sm text-gray-400">
+    <nav aria-label="Breadcrumb" className="max-w-5xl mx-auto px-4 sm:px-6 pt-5 pb-2">
+      <ol className="flex items-center flex-wrap gap-1 text-xs text-gray-400">
         {items.map((item, i) => (
-          <li key={i} className="flex items-center gap-1.5">
-            {i > 0 && <span className="text-gray-600">/</span>}
+          <li key={i} className="flex items-center gap-1">
+            {i > 0 && <FiChevronRight className="w-3 h-3 text-gray-300 flex-shrink-0" />}
             {item.to ? (
-              <Link to={item.to} className="hover:text-red-500 transition-colors duration-200">
+              <Link
+                to={item.to}
+                className="hover:text-red-600 transition-colors duration-150"
+              >
                 {item.label}
               </Link>
             ) : (
-              <span className="text-gray-700 font-medium">{item.label}</span>
+              <span className="text-gray-700 font-medium" aria-current="page">
+                {item.label}
+              </span>
             )}
           </li>
         ))}

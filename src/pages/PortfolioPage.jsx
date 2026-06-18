@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from '../components/sections/Navbar'
+import Hero from '../components/sections/Hero'
 import Footer from '../components/sections/Footer'
 
 const categories = ['Tous', 'Web', 'Mobile', 'Design', 'Marketing']
@@ -36,7 +37,7 @@ const projects = [
     category: 'Marketing',
     image: '/images/portfolio/social.jpg',
     tech: ['Meta Ads', 'Canva', 'Analytics'],
-    desc: 'Campagne publicitaire ayant généré +300% d\'engagement et 2 500 nouveaux abonnés en 30 jours.',
+    desc: "Campagne publicitaire ayant généré +300% d'engagement et 2 500 nouveaux abonnés en 30 jours.",
   },
   {
     id: 5,
@@ -44,7 +45,7 @@ const projects = [
     category: 'Web',
     image: '/images/portfolio/rh.jpg',
     tech: ['Next.js', 'PostgreSQL', 'Tailwind'],
-    desc: 'Système de gestion des ressources humaines avec congés, paie et évaluation des performances.',
+    desc: "Système de gestion des ressources humaines avec congés, paie et évaluation des performances.",
   },
   {
     id: 6,
@@ -52,7 +53,7 @@ const projects = [
     category: 'Mobile',
     image: '/images/portfolio/fintech.jpg',
     tech: ['Flutter', 'Laravel', 'MTN API'],
-    desc: 'Application de transfert d\'argent et de paiement de factures intégrée aux APIs Mobile Money.',
+    desc: "Application de transfert d'argent et de paiement de factures intégrée aux APIs Mobile Money.",
   },
   {
     id: 7,
@@ -80,140 +81,131 @@ const projects = [
   },
 ]
 
+const statsData = [
+  { value: '50+', label: 'Projets livrés' },
+  { value: '30+', label: 'Clients actifs' },
+  { value: '5',   label: 'Pays couverts' },
+  { value: '100%', label: 'Satisfaction client' },
+]
+
 const PortfolioPage = () => {
   const [activeCategory, setActiveCategory] = useState('Tous')
 
-  const filtered = activeCategory === 'Tous'
-    ? projects
-    : projects.filter((p) => p.category === activeCategory)
+  const filtered =
+    activeCategory === 'Tous'
+      ? projects
+      : projects.filter((p) => p.category === activeCategory)
 
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative h-[60vh] min-h-[450px] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/heros/portfolio.jpg')" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-red-950/60 to-black/80" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
-        <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-transparent via-red-500 to-transparent opacity-50" />
-        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-3/4 h-20 bg-red-500/20 blur-3xl rounded-full" />
+      <Hero
+        badge="Portfolio"
+        badgeText="Découvrez nos meilleures réalisations"
+        title="Nos"
+        titleGradient="Réalisations"
+        subtitle="De la conception à la livraison, explorez une sélection de projets web, mobile, design et marketing réalisés pour nos clients à travers l'Afrique."
+        image="/images/heros/portfolio.jpg"
+        ctaPrimary={{ label: 'Nous contacter', to: '/contact' }}
+        ctaSecondary={{ label: 'Nos services', to: '/' }}
+        stats={[
+          { value: '50+', label: 'Projets livrés' },
+          { value: '30+', label: 'Clients actifs' },
+          { value: '5', label: 'Pays couverts' },
+        ]}
+        showMockup={false}
+      />
 
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/40 text-red-300 text-xs font-semibold px-4 py-2 rounded-full mb-6 tracking-widest uppercase backdrop-blur-sm"
-          >
-            <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
-            Nos Réalisations
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
-          >
-            Notre
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-rose-400">
-              Portfolio
-            </span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-gray-300 text-lg max-w-2xl mx-auto"
-          >
-            Découvrez nos projets réalisés pour des clients à travers l'Afrique et au-delà.
-          </motion.p>
-        </div>
-      </section>
+      {/* Projects */}
+      <section className="py-12 md:py-16 max-w-6xl mx-auto px-4 sm:px-6">
 
-      {/* Filtres */}
-      <section className="py-8 md:py-12 max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 md:mb-12">
+        {/* Filter tabs */}
+        <div className="flex items-center gap-1 bg-gray-100 rounded-xl p-1 w-fit mb-10 flex-wrap">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                 activeCategory === cat
-                  ? 'bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg shadow-red-200/60'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  ? 'bg-white text-gray-900 shadow-sm'
+                  : 'text-gray-500 hover:text-gray-700'
               }`}
             >
               {cat}
+              {activeCategory === cat && (
+                <span className="ml-1.5 text-[10px] font-bold text-red-600">
+                  {filtered.length}
+                </span>
+              )}
             </button>
           ))}
         </div>
 
-        {/* Grille projets */}
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-          <AnimatePresence>
+        {/* Grid */}
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <AnimatePresence mode="popLayout">
             {filtered.map((project) => (
-              <motion.div
+              <motion.article
                 key={project.id}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-red-100/60 border border-gray-100 hover:border-red-200 hover:-translate-y-2 transition-all duration-500"
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className="group bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300"
               >
-                <div className="relative h-52 overflow-hidden bg-gray-100">
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden bg-gray-100">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <span className="absolute top-4 right-4 bg-red-500/90 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <span className="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full tracking-wide">
                     {project.category}
                   </span>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors duration-300">
+
+                {/* Content */}
+                <div className="p-5">
+                  <h3 className="text-base font-bold text-gray-900 mb-1.5 group-hover:text-red-600 transition-colors duration-200">
                     {project.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">{project.desc}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((t) => (
-                      <span key={t} className="bg-red-50 text-red-600 text-xs font-medium px-3 py-1 rounded-full border border-red-100">
+                      <span
+                        key={t}
+                        className="bg-gray-100 text-gray-600 text-[11px] font-medium px-2.5 py-1 rounded-full"
+                      >
                         {t}
                       </span>
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </AnimatePresence>
         </motion.div>
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: '50+', label: 'Projets livrés' },
-              { value: '30+', label: 'Clients actifs' },
-              { value: '5', label: 'Pays couverts' },
-              { value: '100%', label: 'Satisfaction client' },
-            ].map((stat, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100">
+            {statsData.map((stat, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
                 viewport={{ once: true }}
+                className="text-center px-6 py-4"
               >
-                <div className="text-4xl font-black text-red-500 mb-2">{stat.value}</div>
-                <div className="text-gray-500 text-sm font-medium">{stat.label}</div>
+                <div className="text-3xl font-black text-red-600 mb-1 tabular-nums">{stat.value}</div>
+                <div className="text-gray-500 text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </div>

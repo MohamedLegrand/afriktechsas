@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
+import { FiArrowRight, FiGlobe, FiSmartphone, FiPenTool, FiTrendingUp, FiGitBranch } from 'react-icons/fi'
 
 const services = [
   {
     id: 'web',
     titre: 'Développement Web',
-    description: 'Nous concevons des sites et applications web modernes, rapides et responsive adaptés à vos besoins.',
+    description: 'Sites et applications web modernes, rapides et responsive — du site vitrine à la plateforme SaaS.',
     image: '/images/services/web.jpg',
     route: '/services/web',
-    icon: '🌐',
+    Icon: FiGlobe,
   },
   {
     id: 'mobile',
@@ -16,7 +17,7 @@ const services = [
     description: 'Applications iOS et Android performantes et intuitives pour connecter votre business à vos clients.',
     image: '/images/services/mobile.jpg',
     route: '/services/mobile',
-    icon: '📱',
+    Icon: FiSmartphone,
   },
   {
     id: 'design',
@@ -24,7 +25,7 @@ const services = [
     description: 'Identité visuelle, logo, affiches et supports de communication qui marquent les esprits.',
     image: '/images/services/design.jpg',
     route: '/services/design',
-    icon: '🎨',
+    Icon: FiPenTool,
   },
   {
     id: 'marketing',
@@ -32,7 +33,7 @@ const services = [
     description: 'Stratégies digitales, réseaux sociaux et campagnes publicitaires pour booster votre visibilité.',
     image: '/images/services/marketing.jpg',
     route: '/services/marketing',
-    icon: '📈',
+    Icon: FiTrendingUp,
   },
   {
     id: 'uml',
@@ -40,7 +41,7 @@ const services = [
     description: 'Modélisation et analyse de vos projets informatiques avec les méthodes UML et MERISE.',
     image: '/images/services/analyse.jpg',
     route: '/services/uml',
-    icon: '📊',
+    Icon: FiGitBranch,
   },
 ]
 
@@ -49,69 +50,39 @@ const Services = () => {
 
   return (
     <section id="services" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
 
-        {/* Titre section */}
+        {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-14"
         >
-          <span className="text-red-500 font-semibold text-sm tracking-widest uppercase">Ce que nous faisons</span>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 font-display mt-3 mb-4">
-            Nos Services
-          </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-rose-400 mx-auto rounded-full mb-4" />
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            Des solutions digitales complètes pour propulser votre entreprise vers le succès
-          </p>
+          <p className="section-eyebrow mb-3">Ce que nous faisons</p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900">
+              Nos Services
+            </h2>
+            <p className="text-gray-500 text-base max-w-md md:text-right">
+              Des solutions digitales complètes pour propulser votre entreprise vers le succès.
+            </p>
+          </div>
+          <div className="mt-6 h-px bg-gray-200" />
         </motion.div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-red-100/60 transition-all duration-500 border border-gray-100 hover:border-red-200 hover:-translate-y-2"
-            >
-              {/* Image */}
-              <div className="relative h-52 overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.titre}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-2xl w-12 h-12 rounded-xl flex items-center justify-center shadow-md">
-                  {service.icon}
-                </div>
-              </div>
+        {/* Cards grid — first 3 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.slice(0, 3).map((service, index) => (
+            <ServiceCard key={service.id} service={service} index={index} navigate={navigate} />
+          ))}
+        </div>
 
-              {/* Contenu */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors duration-300">
-                  {service.titre}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                  {service.description}
-                </p>
-
-                {/* Bouton En savoir plus */}
-                <button
-                  onClick={() => navigate(service.route)}
-                  className="flex items-center gap-2 text-red-500 hover:text-white font-semibold text-sm border-2 border-red-500 hover:bg-red-500 px-5 py-2.5 rounded-full transition-all duration-300 group/btn"
-                >
-                  En savoir plus
-                  <span className="transform group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
-                </button>
-              </div>
-            </motion.div>
+        {/* Cards grid — last 2, centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 lg:w-2/3 lg:mx-auto">
+          {services.slice(3).map((service, index) => (
+            <ServiceCard key={service.id} service={service} index={index + 3} navigate={navigate} />
           ))}
         </div>
       </div>
@@ -119,4 +90,48 @@ const Services = () => {
   )
 }
 
-export default Services 
+const ServiceCard = ({ service, index, navigate }) => {
+  const { Icon } = service
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      viewport={{ once: true }}
+      className="group bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 flex flex-col"
+    >
+      {/* Image */}
+      <div className="relative h-48 overflow-hidden bg-gray-100">
+        <img
+          src={service.image}
+          alt={service.titre}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+        <div className="absolute top-3 left-3 bg-white w-9 h-9 rounded-lg flex items-center justify-center shadow-sm">
+          <Icon className="w-4 h-4 text-red-600" />
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-5 flex flex-col flex-1">
+        <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors duration-200">
+          {service.titre}
+        </h3>
+        <p className="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+          {service.description}
+        </p>
+        <button
+          onClick={() => navigate(service.route)}
+          className="inline-flex items-center gap-1.5 text-red-600 hover:text-red-700 font-semibold text-sm transition-colors duration-200 group/btn"
+        >
+          En savoir plus
+          <FiArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
+        </button>
+      </div>
+    </motion.article>
+  )
+}
+
+export default Services
