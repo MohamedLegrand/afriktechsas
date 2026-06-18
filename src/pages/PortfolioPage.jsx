@@ -9,7 +9,7 @@ const categories = ['Tous', 'Web', 'Mobile', 'Design', 'Marketing']
 const projects = [
   {
     id: 1,
-    title: 'Plateforme E-commerce',
+    title: 'Plateforme E-commerce ',
     category: 'Web',
     image: '/images/portfolio/ecommerce.jpg',
     tech: ['React', 'Node.js', 'MongoDB'],
@@ -57,7 +57,7 @@ const projects = [
   },
   {
     id: 7,
-    title: 'Brand Kit Startup Tech',
+    title: 'Brand Kit StartUP Tech',
     category: 'Design',
     image: '/images/portfolio/brand.jpg',
     tech: ['Figma', 'After Effects', 'Illustrator'],
