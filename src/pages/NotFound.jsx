@@ -26,7 +26,7 @@ const NotFound = () => {
             Page introuvable
           </h1>
           <p className="text-gray-500 text-sm mb-8 leading-relaxed">
-            La page que vous cherchez n'existe pas ou a été déplacée.
+            La page que vous cherchez n'existe pas encore nous somme navre pour ca.
             Revenez à l'accueil pour continuer votre navigation.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
