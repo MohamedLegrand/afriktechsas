@@ -1,30 +1,30 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import {
-  FiTag, FiLayout, FiShare2, FiPlay, FiMonitor, FiPackage,
-  FiAward, FiFileText, FiImage, FiFilm, FiArrowRight, FiArrowLeft,
-} from 'react-icons/fi'
+  FaTag, FaTableColumns, FaShareNodes, FaPlay, FaDisplay, FaBox,
+  FaTrophy, FaFileLines, FaImage, FaFilm, FaArrowRight, FaArrowLeft,
+} from 'react-icons/fa6'
 import Navbar from '../../components/sections/Navbar'
 import Hero from '../../components/sections/Hero'
 import Footer from '../../components/sections/Footer'
 import Breadcrumb from '../../components/ui/Breadcrumb'
 
 const features = [
-  { Icon: FiTag,     title: 'Identité de Marque',           desc: 'Logo, charte graphique, palette de couleurs et typographies qui donnent une personnalité forte et cohérente à votre marque.' },
-  { Icon: FiFileText, title: 'Supports Imprimés',           desc: 'Cartes de visite, flyers, affiches, brochures et kakémonos conçus pour marquer les esprits et renforcer votre présence.' },
-  { Icon: FiShare2,  title: 'Visuels pour Réseaux Sociaux', desc: 'Contenus graphiques optimisés pour chaque plateforme : Instagram, Facebook, LinkedIn et TikTok.' },
-  { Icon: FiPlay,    title: 'Motion Design',                desc: 'Animations et vidéos courtes qui captivent votre audience et communiquent vos messages avec impact.' },
-  { Icon: FiMonitor, title: 'UI Design',                   desc: 'Interfaces utilisateur pour vos applications web et mobiles, ergonomiques et esthétiquement irréprochables.' },
-  { Icon: FiPackage, title: 'Packaging & Signalétique',     desc: 'Design de packaging produit et signalétique en magasin qui valorisent votre offre et renforcent votre image.' },
+  { Icon: FaTag,     title: 'Identité de Marque',           desc: 'Logo, charte graphique, palette de couleurs et typographies qui donnent une personnalité forte et cohérente à votre marque.' },
+  { Icon: FaFileLines, title: 'Supports Imprimés',           desc: 'Cartes de visite, flyers, affiches, brochures et kakémonos conçus pour marquer les esprits et renforcer votre présence.' },
+  { Icon: FaShareNodes,  title: 'Visuels pour Réseaux Sociaux', desc: 'Contenus graphiques optimisés pour chaque plateforme : Instagram, Facebook, LinkedIn et TikTok.' },
+  { Icon: FaPlay,    title: 'Motion Design',                desc: 'Animations et vidéos courtes qui captivent votre audience et communiquent vos messages avec impact.' },
+  { Icon: FaDisplay, title: 'UI Design',                   desc: 'Interfaces utilisateur pour vos applications web et mobiles, ergonomiques et esthétiquement irréprochables.' },
+  { Icon: FaBox, title: 'Packaging & Signalétique',     desc: 'Design de packaging produit et signalétique en magasin qui valorisent votre offre et renforcent votre image.' },
 ]
 
 const designTypes = [
-  { Icon: FiAward,    label: 'Logo & Branding' },
-  { Icon: FiFileText, label: 'Flyers & Affiches' },
-  { Icon: FiImage,    label: 'Visuels Réseaux' },
-  { Icon: FiFilm,     label: 'Motion Design' },
-  { Icon: FiMonitor,  label: 'UI Design' },
-  { Icon: FiPackage,  label: 'Packaging' },
+  { Icon: FaTrophy,    label: 'Logo & Branding' },
+  { Icon: FaFileLines, label: 'Flyers & Affiches' },
+  { Icon: FaImage,    label: 'Visuels Réseaux' },
+  { Icon: FaFilm,     label: 'Motion Design' },
+  { Icon: FaDisplay,  label: 'UI Design' },
+  { Icon: FaBox,  label: 'Packaging' },
 ]
 
 const process = [
@@ -197,7 +197,7 @@ const DesignService = () => {
                 <p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
                 {i < process.length - 1 && (
                   <div className="hidden lg:block absolute top-8 -right-2.5 text-gray-300">
-                    <FiArrowRight className="w-4 h-4" />
+                    <FaArrowRight className="w-4 h-4" />
                   </div>
                 )}
               </motion.div>
@@ -223,13 +223,13 @@ const DesignService = () => {
               className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
               Démarrer un projet
-              <FiArrowRight className="w-4 h-4" />
+              <FaArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => navigate(-1)}
               className="inline-flex items-center justify-center gap-2 border border-gray-300 hover:border-red-400 text-gray-700 hover:text-red-600 font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
-              <FiArrowLeft className="w-4 h-4" />
+              <FaArrowLeft className="w-4 h-4" />
               Retour aux services
             </button>
           </div>

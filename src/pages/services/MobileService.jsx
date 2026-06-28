@@ -1,31 +1,31 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import {
-  FiSmartphone, FiLayers, FiBell, FiWifi, FiShield, FiBarChart2,
-  FiPackage, FiCreditCard, FiShoppingBag, FiCalendar, FiStar, FiClipboard,
-  FiArrowRight, FiArrowLeft,
-} from 'react-icons/fi'
+  FaMobileScreen, FaLayerGroup, FaBell, FaWifi, FaShield, FaChartBar,
+  FaBox, FaCreditCard, FaBagShopping, FaCalendar, FaStar, FaClipboard,
+  FaArrowRight, FaArrowLeft,
+} from 'react-icons/fa6'
 import Navbar from '../../components/sections/Navbar'
 import Hero from '../../components/sections/Hero'
 import Footer from '../../components/sections/Footer'
 import Breadcrumb from '../../components/ui/Breadcrumb'
 
 const features = [
-  { Icon: FiSmartphone, title: 'iOS & Android Natifs',       desc: "Applications natives Swift/Kotlin pour des performances maximales et une expérience utilisateur irréprochable." },
-  { Icon: FiLayers,     title: 'React Native & Flutter',     desc: "Solutions cross-platform qui partagent jusqu'à 90 % du code entre iOS et Android, réduisant les coûts et délais." },
-  { Icon: FiBell,       title: 'Notifications Push',         desc: "Engagement utilisateur boosté grâce aux notifications ciblées, en temps réel, géolocalisées ou planifiées." },
-  { Icon: FiWifi,       title: 'Mode Hors Ligne',            desc: "Fonctionnement garanti sans connexion internet, avec synchronisation automatique dès le retour en ligne." },
-  { Icon: FiShield,     title: 'Sécurité & Authentification',desc: "Biométrie, authentification multi-facteurs et chiffrement des données pour protéger vos utilisateurs." },
-  { Icon: FiBarChart2,  title: 'Analytics Intégrés',         desc: "Tableaux de bord en temps réel pour suivre l'engagement, les conversions et le comportement utilisateur." },
+  { Icon: FaMobileScreen, title: 'iOS & Android Natifs',       desc: "Applications natives Swift/Kotlin pour des performances maximales et une expérience utilisateur irréprochable." },
+  { Icon: FaLayerGroup,     title: 'React Native & Flutter',     desc: "Solutions cross-platform qui partagent jusqu'à 90 % du code entre iOS et Android, réduisant les coûts et délais." },
+  { Icon: FaBell,       title: 'Notifications Push',         desc: "Engagement utilisateur boosté grâce aux notifications ciblées, en temps réel, géolocalisées ou planifiées." },
+  { Icon: FaWifi,       title: 'Mode Hors Ligne',            desc: "Fonctionnement garanti sans connexion internet, avec synchronisation automatique dès le retour en ligne." },
+  { Icon: FaShield,     title: 'Sécurité & Authentification',desc: "Biométrie, authentification multi-facteurs et chiffrement des données pour protéger vos utilisateurs." },
+  { Icon: FaChartBar,  title: 'Analytics Intégrés',         desc: "Tableaux de bord en temps réel pour suivre l'engagement, les conversions et le comportement utilisateur." },
 ]
 
 const mobileTypes = [
-  { Icon: FiPackage,     label: 'Apps de livraison' },
-  { Icon: FiCreditCard,  label: 'Paiement mobile' },
-  { Icon: FiShoppingBag, label: 'Apps e-commerce' },
-  { Icon: FiCalendar,    label: 'Réservation' },
-  { Icon: FiStar,        label: 'Fidélité client' },
-  { Icon: FiClipboard,   label: 'Apps métier' },
+  { Icon: FaBox,     label: 'Apps de livraison' },
+  { Icon: FaCreditCard,  label: 'Paiement mobile' },
+  { Icon: FaBagShopping, label: 'Apps e-commerce' },
+  { Icon: FaCalendar,    label: 'Réservation' },
+  { Icon: FaStar,        label: 'Fidélité client' },
+  { Icon: FaClipboard,   label: 'Apps métier' },
 ]
 
 const process = [
@@ -250,7 +250,7 @@ const MobileService = () => {
                 <p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
                 {i < process.length - 1 && (
                   <div className="hidden lg:block absolute top-8 -right-2.5 text-gray-300">
-                    <FiArrowRight className="w-4 h-4" />
+                    <FaArrowRight className="w-4 h-4" />
                   </div>
                 )}
               </motion.div>
@@ -276,13 +276,13 @@ const MobileService = () => {
               className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
               Démarrer un projet
-              <FiArrowRight className="w-4 h-4" />
+              <FaArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => navigate(-1)}
               className="inline-flex items-center justify-center gap-2 border border-gray-300 hover:border-red-400 text-gray-700 hover:text-red-600 font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
-              <FiArrowLeft className="w-4 h-4" />
+              <FaArrowLeft className="w-4 h-4" />
               Retour aux services
             </button>
           </div>

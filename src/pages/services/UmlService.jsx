@@ -1,30 +1,30 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import {
-  FiGitBranch, FiDatabase, FiClipboard, FiCpu, FiFileText, FiRefreshCw,
-  FiGrid, FiLayers, FiEye, FiLayout, FiBook, FiArrowRight, FiArrowLeft,
-} from 'react-icons/fi'
+  FaDiagramProject, FaDatabase, FaClipboard, FaMicrochip, FaFileLines, FaArrowsRotate,
+  FaLayerGroup, FaEye, FaTableColumns, FaBook, FaArrowRight, FaArrowLeft,
+} from 'react-icons/fa6'
 import Navbar from '../../components/sections/Navbar'
 import Hero from '../../components/sections/Hero'
 import Footer from '../../components/sections/Footer'
 import Breadcrumb from '../../components/ui/Breadcrumb'
 
 const features = [
-  { Icon: FiGitBranch, title: 'Modélisation UML',       desc: "Diagrammes de classes, séquences, cas d'utilisation et d'activités pour structurer et documenter votre système." },
-  { Icon: FiDatabase,  title: 'Modélisation MERISE',    desc: 'MCD, MLD et MPD pour concevoir des bases de données relationnelles robustes, normalisées et évolutives.' },
-  { Icon: FiClipboard, title: 'Analyse des Besoins',    desc: "Recueil et formalisation des exigences fonctionnelles et techniques via ateliers et entretiens structurés." },
-  { Icon: FiCpu,       title: 'Architecture Logicielle', desc: "Conception de l'architecture applicative (MVC, microservices, API REST) adaptée à vos contraintes et objectifs." },
-  { Icon: FiFileText,  title: 'Dossier de Conception',  desc: 'Production de cahiers des charges, spécifications fonctionnelles et dossiers techniques complets et clairs.' },
-  { Icon: FiRefreshCw, title: 'Reverse Engineering',    desc: "Analyse et documentation de systèmes existants pour en extraire les modèles et préparer leur évolution." },
+  { Icon: FaDiagramProject, title: 'Modélisation UML',       desc: "Diagrammes de classes, séquences, cas d'utilisation et d'activités pour structurer et documenter votre système." },
+  { Icon: FaDatabase,  title: 'Modélisation MERISE',    desc: 'MCD, MLD et MPD pour concevoir des bases de données relationnelles robustes, normalisées et évolutives.' },
+  { Icon: FaClipboard, title: 'Analyse des Besoins',    desc: "Recueil et formalisation des exigences fonctionnelles et techniques via ateliers et entretiens structurés." },
+  { Icon: FaMicrochip,       title: 'Architecture Logicielle', desc: "Conception de l'architecture applicative (MVC, microservices, API REST) adaptée à vos contraintes et objectifs." },
+  { Icon: FaFileLines,  title: 'Dossier de Conception',  desc: 'Production de cahiers des charges, spécifications fonctionnelles et dossiers techniques complets et clairs.' },
+  { Icon: FaArrowsRotate, title: 'Reverse Engineering',    desc: "Analyse et documentation de systèmes existants pour en extraire les modèles et préparer leur évolution." },
 ]
 
 const umlTypes = [
-  { Icon: FiGrid,    label: 'Diagrammes UML' },
-  { Icon: FiLayers,  label: 'MCD / MLD / MPD' },
-  { Icon: FiEye,     label: 'Analyse besoins' },
-  { Icon: FiLayout,  label: 'Architecture SI' },
-  { Icon: FiBook,    label: 'Cahier des charges' },
-  { Icon: FiRefreshCw, label: 'Reverse Engineering' },
+  { Icon: FaLayerGroup,    label: 'Diagrammes UML' },
+  { Icon: FaLayerGroup,  label: 'MCD / MLD / MPD' },
+  { Icon: FaEye,     label: 'Analyse besoins' },
+  { Icon: FaTableColumns,  label: 'Architecture SI' },
+  { Icon: FaBook,    label: 'Cahier des charges' },
+  { Icon: FaArrowsRotate, label: 'Reverse Engineering' },
 ]
 
 const process = [
@@ -197,7 +197,7 @@ const UmlService = () => {
                 <p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
                 {i < process.length - 1 && (
                   <div className="hidden lg:block absolute top-8 -right-2.5 text-gray-300">
-                    <FiArrowRight className="w-4 h-4" />
+                    <FaArrowRight className="w-4 h-4" />
                   </div>
                 )}
               </motion.div>
@@ -223,13 +223,13 @@ const UmlService = () => {
               className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
               Démarrer un projet
-              <FiArrowRight className="w-4 h-4" />
+              <FaArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => navigate(-1)}
               className="inline-flex items-center justify-center gap-2 border border-gray-300 hover:border-red-400 text-gray-700 hover:text-red-600 font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
-              <FiArrowLeft className="w-4 h-4" />
+              <FaArrowLeft className="w-4 h-4" />
               Retour aux services
             </button>
           </div>

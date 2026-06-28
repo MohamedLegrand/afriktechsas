@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FiArrowLeft, FiMail } from 'react-icons/fi'
+import { FaArrowLeft, FaEnvelope } from 'react-icons/fa6'
 import Navbar from '../components/sections/Navbar'
 import Footer from '../components/sections/Footer'
 
@@ -34,14 +34,14 @@ const NotFound = () => {
               to="/"
               className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
             >
-              <FiArrowLeft className="w-4 h-4" />
+              <FaArrowLeft className="w-4 h-4" />
               Retour à l'accueil
             </Link>
             <Link
               to="/contact"
               className="inline-flex items-center justify-center gap-2 border border-gray-300 hover:border-red-400 text-gray-700 hover:text-red-600 font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
             >
-              <FiMail className="w-4 h-4" />
+              <FaEnvelope className="w-4 h-4" />
               Nous contacter
             </Link>
           </div>

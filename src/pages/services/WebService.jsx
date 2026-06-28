@@ -1,31 +1,31 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import {
-  FiZap, FiSmartphone, FiShield, FiSearch, FiCode, FiRefreshCw,
-  FiGlobe, FiShoppingCart, FiSettings, FiServer, FiBarChart2, FiPackage,
-  FiArrowRight, FiArrowLeft,
-} from 'react-icons/fi'
+  FaBolt, FaMobileScreen, FaShield, FaMagnifyingGlass, FaCode, FaArrowsRotate,
+  FaGlobe, FaCartShopping, FaGears, FaServer, FaChartBar, FaBox,
+  FaArrowRight, FaArrowLeft,
+} from 'react-icons/fa6'
 import Navbar from '../../components/sections/Navbar'
 import Hero from '../../components/sections/Hero'
 import Footer from '../../components/sections/Footer'
 import Breadcrumb from '../../components/ui/Breadcrumb'
 
 const features = [
-  { Icon: FiZap,        title: 'Performance & Rapidité',  desc: 'Sites optimisés avec lazy loading, code splitting et CDN pour des temps de chargement inférieurs à 2 secondes.' },
-  { Icon: FiSmartphone, title: 'Responsive Design',       desc: 'Interfaces adaptées à tous les écrans — mobile, tablette et desktop — avec une expérience fluide sur chaque appareil.' },
-  { Icon: FiShield,     title: 'Sécurité Renforcée',      desc: 'HTTPS, protection contre les injections SQL, XSS et authentification sécurisée intégrés dès la conception.' },
-  { Icon: FiSearch,     title: 'SEO Optimisé',            desc: 'Architecture technique pensée pour le référencement : balises méta, sitemap, données structurées et Core Web Vitals.' },
-  { Icon: FiCode,       title: 'Stack Moderne',           desc: 'React, Next.js, Node.js, Laravel — nous choisissons les technologies les plus adaptées à votre projet.' },
-  { Icon: FiRefreshCw,  title: 'Maintenance & Évolution', desc: 'Accompagnement continu après livraison : mises à jour, nouvelles fonctionnalités et support technique réactif.' },
+  { Icon: FaBolt,        title: 'Performance & Rapidité',  desc: 'Sites optimisés avec lazy loading, code splitting et CDN pour des temps de chargement inférieurs à 2 secondes.' },
+  { Icon: FaMobileScreen, title: 'Responsive Design',       desc: 'Interfaces adaptées à tous les écrans — mobile, tablette et desktop — avec une expérience fluide sur chaque appareil.' },
+  { Icon: FaShield,     title: 'Sécurité Renforcée',      desc: 'HTTPS, protection contre les injections SQL, XSS et authentification sécurisée intégrés dès la conception.' },
+  { Icon: FaMagnifyingGlass,     title: 'SEO Optimisé',            desc: 'Architecture technique pensée pour le référencement : balises méta, sitemap, données structurées et Core Web Vitals.' },
+  { Icon: FaCode,       title: 'Stack Moderne',           desc: 'React, Next.js, Node.js, Laravel — nous choisissons les technologies les plus adaptées à votre projet.' },
+  { Icon: FaArrowsRotate,  title: 'Maintenance & Évolution', desc: 'Accompagnement continu après livraison : mises à jour, nouvelles fonctionnalités et support technique réactif.' },
 ]
 
 const webTypes = [
-  { Icon: FiGlobe,        label: 'Sites vitrines' },
-  { Icon: FiShoppingCart, label: 'E-commerce' },
-  { Icon: FiSettings,     label: 'Applications métier' },
-  { Icon: FiServer,       label: 'APIs & Backends' },
-  { Icon: FiBarChart2,    label: 'Dashboards Admin' },
-  { Icon: FiPackage,      label: 'SaaS & Startups' },
+  { Icon: FaGlobe,        label: 'Sites vitrines' },
+  { Icon: FaCartShopping, label: 'E-commerce' },
+  { Icon: FaGears,     label: 'Applications métier' },
+  { Icon: FaServer,       label: 'APIs & Backends' },
+  { Icon: FaChartBar,    label: 'Dashboards Admin' },
+  { Icon: FaBox,      label: 'SaaS & Startups' },
 ]
 
 const process = [
@@ -247,7 +247,7 @@ const WebService = () => {
                 <p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
                 {i < process.length - 1 && (
                   <div className="hidden lg:block absolute top-8 -right-2.5 text-gray-300">
-                    <FiArrowRight className="w-4 h-4" />
+                    <FaArrowRight className="w-4 h-4" />
                   </div>
                 )}
               </motion.div>
@@ -273,13 +273,13 @@ const WebService = () => {
               className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
               Démarrer un projet
-              <FiArrowRight className="w-4 h-4" />
+              <FaArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => navigate(-1)}
               className="inline-flex items-center justify-center gap-2 border border-gray-300 hover:border-red-400 text-gray-700 hover:text-red-600 font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
-              <FiArrowLeft className="w-4 h-4" />
+              <FaArrowLeft className="w-4 h-4" />
               Retour aux services
             </button>
           </div>

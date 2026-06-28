@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FiChevronRight } from 'react-icons/fi'
+import { FaChevronRight } from 'react-icons/fa6'
 
 const Breadcrumb = ({ items }) => {
   return (
@@ -7,7 +7,7 @@ const Breadcrumb = ({ items }) => {
       <ol className="flex items-center flex-wrap gap-1 text-xs text-gray-400">
         {items.map((item, i) => (
           <li key={i} className="flex items-center gap-1">
-            {i > 0 && <FiChevronRight className="w-3 h-3 text-gray-300 flex-shrink-0" />}
+            {i > 0 && <FaChevronRight className="w-3 h-3 text-gray-300 flex-shrink-0" />}
             {item.to ? (
               <Link
                 to={item.to}

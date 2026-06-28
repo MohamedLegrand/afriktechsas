@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiMapPin, FiPhone, FiMail, FiMenu, FiX } from 'react-icons/fi'
+import { FaPhone, FaBars, FaXmark } from 'react-icons/fa6'
 
 const scrollLinks = [
   { label: 'Accueil', to: 'accueil' },
@@ -54,43 +54,6 @@ const Navbar = () => {
           : 'bg-white border-b border-gray-100'
       }`}
     >
-      {/* Top info bar — desktop only */}
-      <div className="hidden lg:block bg-gray-950">
-        <div className="max-w-6xl mx-auto px-6 py-1.5 flex items-center justify-between text-[11px] text-gray-500">
-          <span className="flex items-center gap-1.5">
-            <FiMapPin className="w-3 h-3 flex-shrink-0" />
-            Yaoundé, Cameroun — Solutions digitales pour l'Afrique
-          </span>
-          <div className="flex items-center gap-5">
-            <a
-              href="https://wa.me/237657375652"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-green-400 transition-colors"
-            >
-              <FiPhone className="w-3 h-3" />
-              +237 657 37 56 52
-            </a>
-            <a
-              href="https://wa.me/237657976900"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-green-400 transition-colors"
-            >
-              <FiPhone className="w-3 h-3" />
-              +237 657 97 69 00
-            </a>
-            <a
-              href="mailto:contact@afriktechsas.com"
-              className="flex items-center gap-1.5 hover:text-red-400 transition-colors"
-            >
-              <FiMail className="w-3 h-3" />
-              contact@afriktechsas.com
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main bar */}
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
 
@@ -166,7 +129,7 @@ const Navbar = () => {
             aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             aria-expanded={menuOpen}
           >
-            {menuOpen ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
+            {menuOpen ? <FaXmark className="w-5 h-5" /> : <FaBars className="w-5 h-5" />}
           </button>
         </div>
       </div>
@@ -190,7 +153,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-xs text-gray-500 hover:text-green-600 py-1.5 transition-colors"
                 >
-                  <FiPhone className="w-3 h-3" />
+                  <FaPhone className="w-3 h-3" />
                   +237 657 37 56 52
                 </a>
                 <a
@@ -199,7 +162,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-xs text-gray-500 hover:text-green-600 py-1.5 transition-colors"
                 >
-                  <FiPhone className="w-3 h-3" />
+                  <FaPhone className="w-3 h-3" />
                   +237 657 97 69 00
                 </a>
               </div>

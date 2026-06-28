@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { FiArrowLeft, FiMessageSquare } from 'react-icons/fi'
+import { FaArrowLeft, FaCommentDots } from 'react-icons/fa6'
 import Navbar from '../../components/sections/Navbar'
 import Footer from '../../components/sections/Footer'
 import Breadcrumb from '../../components/ui/Breadcrumb'
@@ -24,7 +24,7 @@ const MemberPage = () => {
               onClick={() => navigate('/apropos')}
               className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
             >
-              <FiArrowLeft className="w-4 h-4" />
+              <FaArrowLeft className="w-4 h-4" />
               Retour à l'équipe
             </button>
           </div>
@@ -195,14 +195,14 @@ const MemberPage = () => {
               onClick={() => navigate('/apropos')}
               className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
-              <FiArrowLeft className="w-4 h-4" />
+              <FaArrowLeft className="w-4 h-4" />
               Voir toute l'équipe
             </button>
             <button
               onClick={() => navigate('/contact')}
               className="inline-flex items-center justify-center gap-2 border border-gray-300 hover:border-red-400 text-gray-700 hover:text-red-600 font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
-              <FiMessageSquare className="w-4 h-4" />
+              <FaCommentDots className="w-4 h-4" />
               Nous contacter
             </button>
           </div>

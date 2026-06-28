@@ -1,31 +1,31 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import {
-  FiMessageCircle, FiTarget, FiMail, FiSearch, FiEdit3, FiBarChart2,
-  FiRadio, FiCrosshair, FiAtSign, FiSliders, FiFileText, FiTrendingUp,
-  FiArrowRight, FiArrowLeft,
-} from 'react-icons/fi'
+  FaComments, FaBullseye, FaEnvelope, FaMagnifyingGlass, FaPenToSquare, FaChartBar,
+  FaTowerBroadcast, FaCrosshairs, FaAt, FaSliders, FaFileLines, FaChartLine,
+  FaArrowRight, FaArrowLeft,
+} from 'react-icons/fa6'
 import Navbar from '../../components/sections/Navbar'
 import Hero from '../../components/sections/Hero'
 import Footer from '../../components/sections/Footer'
 import Breadcrumb from '../../components/ui/Breadcrumb'
 
 const features = [
-  { Icon: FiMessageCircle, title: 'Gestion des Réseaux Sociaux', desc: "Création de contenu, planification et animation de vos communautés sur Facebook, Instagram, LinkedIn et TikTok." },
-  { Icon: FiTarget,        title: 'Publicité Ciblée (Ads)',      desc: "Campagnes Meta Ads et Google Ads optimisées pour maximiser votre ROI et atteindre précisément votre cible." },
-  { Icon: FiMail,          title: 'Email Marketing',             desc: "Newsletters, séquences d'automation et campagnes d'emailing personnalisées qui convertissent et fidélisent." },
-  { Icon: FiSearch,        title: 'SEO & Référencement',         desc: "Audit technique, stratégie de contenu et link building pour gagner des positions durables sur Google." },
-  { Icon: FiEdit3,         title: 'Content Marketing',          desc: "Stratégie éditoriale, articles de blog, infographies et vidéos qui attirent et éduquent votre audience." },
-  { Icon: FiBarChart2,     title: 'Analytics & Reporting',      desc: "Tableaux de bord clairs, KPIs suivis en temps réel et rapports mensuels pour piloter vos décisions." },
+  { Icon: FaComments, title: 'Gestion des Réseaux Sociaux', desc: "Création de contenu, planification et animation de vos communautés sur Facebook, Instagram, LinkedIn et TikTok." },
+  { Icon: FaBullseye,        title: 'Publicité Ciblée (Ads)',      desc: "Campagnes Meta Ads et Google Ads optimisées pour maximiser votre ROI et atteindre précisément votre cible." },
+  { Icon: FaEnvelope,          title: 'Email Marketing',             desc: "Newsletters, séquences d'automation et campagnes d'emailing personnalisées qui convertissent et fidélisent." },
+  { Icon: FaMagnifyingGlass,        title: 'SEO & Référencement',         desc: "Audit technique, stratégie de contenu et link building pour gagner des positions durables sur Google." },
+  { Icon: FaPenToSquare,         title: 'Content Marketing',          desc: "Stratégie éditoriale, articles de blog, infographies et vidéos qui attirent et éduquent votre audience." },
+  { Icon: FaChartBar,     title: 'Analytics & Reporting',      desc: "Tableaux de bord clairs, KPIs suivis en temps réel et rapports mensuels pour piloter vos décisions." },
 ]
 
 const marketingTypes = [
-  { Icon: FiRadio,       label: 'Réseaux sociaux' },
-  { Icon: FiCrosshair,   label: 'Publicité ciblée' },
-  { Icon: FiAtSign,      label: 'Email marketing' },
-  { Icon: FiSearch,      label: 'SEO & Google' },
-  { Icon: FiFileText,    label: 'Création contenu' },
-  { Icon: FiTrendingUp,  label: 'Analytics & ROI' },
+  { Icon: FaTowerBroadcast,       label: 'Réseaux sociaux' },
+  { Icon: FaCrosshairs,   label: 'Publicité ciblée' },
+  { Icon: FaAt,      label: 'Email marketing' },
+  { Icon: FaMagnifyingGlass,      label: 'SEO & Google' },
+  { Icon: FaFileLines,    label: 'Création contenu' },
+  { Icon: FaChartLine,  label: 'Analytics & ROI' },
 ]
 
 const process = [
@@ -197,7 +197,7 @@ const MarketingService = () => {
                 <p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
                 {i < process.length - 1 && (
                   <div className="hidden lg:block absolute top-8 -right-2.5 text-gray-300">
-                    <FiArrowRight className="w-4 h-4" />
+                    <FaArrowRight className="w-4 h-4" />
                   </div>
                 )}
               </motion.div>
@@ -223,13 +223,13 @@ const MarketingService = () => {
               className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
               Démarrer un projet
-              <FiArrowRight className="w-4 h-4" />
+              <FaArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => navigate(-1)}
               className="inline-flex items-center justify-center gap-2 border border-gray-300 hover:border-red-400 text-gray-700 hover:text-red-600 font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
-              <FiArrowLeft className="w-4 h-4" />
+              <FaArrowLeft className="w-4 h-4" />
               Retour aux services
             </button>
           </div>

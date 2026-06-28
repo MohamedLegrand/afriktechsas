@@ -1,48 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html { scroll-behavior: smooth; }
   * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
   body {
-    @apply text-gray-900 bg-white;
+    background-color: #ffffff;
+    color: #4B5563;
+    font-family: 'Inter', sans-serif;
   }
-
+  h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #0A0A0A;
+  }
   :focus-visible {
-    outline: 2px solid #dc2626;
+    outline: 2px solid #DC2626;
     outline-offset: 2px;
   }
 }
 
-@layer utilities {
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors duration-200;
+@layer components {
+  .section-label {
+    @apply text-red-600 font-semibold text-xs tracking-widest uppercase mb-3 block;
+    font-family: 'Inter', sans-serif;
   }
-
-  .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 border border-gray-300 hover:border-red-400 text-gray-700 hover:text-red-600 font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors duration-200;
-  }
-
   .section-eyebrow {
     @apply text-red-600 font-semibold text-xs tracking-widest uppercase;
+    font-family: 'Inter', sans-serif;
   }
-
-  .animate-hero-float {
-    animation: heroFloat 6s ease-in-out infinite;
+  .section-title {
+    @apply font-extrabold mb-4;
+    font-family: 'Montserrat', sans-serif;
+    color: #0A0A0A;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
   }
-
-  .hero-deco-circle {
-    animation: heroFloat 7s ease-in-out infinite;
+  .section-divider {
+    @apply w-10 h-0.5 bg-red-600 rounded-full mb-4;
+  }
+  .btn-primary {
+    @apply bg-red-600 hover:bg-red-700 text-white font-semibold text-sm
+           px-6 py-3 rounded-full transition-colors duration-300
+           inline-flex items-center gap-2;
+    font-family: 'Inter', sans-serif;
+  }
+  .btn-outline {
+    @apply border border-gray-200 hover:border-red-600 hover:text-red-600
+           font-semibold text-sm px-6 py-3 rounded-full
+           transition-colors duration-300 inline-flex items-center gap-2;
+    color: #0A0A0A;
+    font-family: 'Inter', sans-serif;
+  }
+  .card {
+    @apply bg-white border border-gray-200 rounded-xl p-8
+           hover:border-red-600 hover:shadow-lg transition-all duration-300;
+  }
+  .input-field {
+    @apply w-full rounded-lg px-4 py-3 text-sm placeholder-gray-400
+           focus:outline-none transition-colors duration-200;
+    font-family: 'Inter', sans-serif;
+    color: #0A0A0A;
+    border: 1.5px solid #E5E7EB;
+  }
+  .input-field:focus {
+    border-color: #DC2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
   }
 }
 
 @keyframes heroFloat {
   0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-12px); }
+  50%       { transform: translateY(-10px); }
 }
+.animate-hero-float { animation: heroFloat 6s ease-in-out infinite; }
+.hero-deco-circle   { animation: heroFloat 7s ease-in-out infinite; }
