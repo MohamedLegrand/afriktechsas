@@ -1,21 +1,23 @@
 import { useState } from 'react'
+import { FaArrowRight, FaUpload } from 'react-icons/fa'
 import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from '../components/sections/Navbar'
 import Hero from '../components/sections/Hero'
 import Footer from '../components/sections/Footer'
+import { a } from 'framer-motion/client'
 
 const categories = ['Tous', 'Web', 'Mobile', 'Design', 'Marketing']
 
 const projects = [
-  { id: 1, title: 'Plateforme E-commerce',        category: 'Web',       image: '/images/portfolio/ecommerce.jpg', tech: ['React', 'Node.js', 'MongoDB'],              desc: 'Boutique en ligne avec paiement Mobile Money et tableau de bord admin.' },
-  { id: 2, title: 'App de Livraison',              category: 'Mobile',    image: '/images/portfolio/delivery.jpg',  tech: ['React Native', 'Firebase', 'Google Maps'],  desc: 'Application géolocalisée avec suivi en temps réel pour livreurs et clients.' },
-  { id: 3, title: 'Identité Visuelle AfriFood',    category: 'Design',    image: '/images/portfolio/afrifood.jpg',  tech: ['Illustrator', 'Photoshop', 'Figma'],        desc: 'Logo, charte graphique et supports pour une chaîne de restauration rapide.' },
-  { id: 4, title: 'Campagne Social Media',         category: 'Marketing', image: '/images/portfolio/social.jpg',   tech: ['Meta Ads', 'Canva', 'Analytics'],           desc: '+300% d\'engagement et 2 500 nouveaux abonnés en 30 jours.' },
-  { id: 5, title: 'Portail RH Entreprise',         category: 'Web',       image: '/images/portfolio/rh.jpg',       tech: ['Next.js', 'PostgreSQL', 'Tailwind'],        desc: 'Système de gestion RH avec congés, paie et évaluation des performances.' },
-  { id: 6, title: 'App Fintech Mobile Money',      category: 'Mobile',    image: '/images/portfolio/fintech.jpg',  tech: ['Flutter', 'Laravel', 'MTN API'],            desc: 'Transfert d\'argent et paiement de factures intégré aux APIs Mobile Money.' },
-  { id: 7, title: 'Brand Kit StartUP Tech',        category: 'Design',    image: '/images/portfolio/brand.jpg',    tech: ['Figma', 'After Effects', 'Illustrator'],    desc: 'Kit de marque complet avec animations, templates et pitch deck.' },
-  { id: 8, title: 'Stratégie SEO & Contenu',       category: 'Marketing', image: '/images/portfolio/seo.jpg',     tech: ['SEMrush', 'WordPress', 'GA4'],              desc: 'Audit SEO et link building ayant doublé le trafic organique en 3 mois.' },
-  { id: 9, title: 'Site Vitrine Cabinet Médical',  category: 'Web',       image: '/images/portfolio/medical.jpg', tech: ['React', 'Tailwind', 'Prismic'],             desc: 'Site de présentation avec prise de rendez-vous en ligne et blog médical.' },
+  { id: 1, title: 'Site web d\'AfrikTech', category: 'Web', image: '/images/Realisation/web/site_web_AfrikTech.png', tech: ['React'], desc: 'Site web vitrine présentant la structure AfrikTech.', exp : 'https://afriktechsas.vercel.app' },
+  { id: 2, title: 'App de gestion de boutique', category: 'Mobile', image: '/images/portfolio/delivery.jpg', tech: ['React Native', 'Firebase', 'Google Maps'], desc: 'Application géolocalisée avec suivi en temps réel pour livreurs et clients.', exp :'' },
+  { id: 3, title: 'Identité Visuelle AfriFood', category: 'Design', image: '/images/portfolio/afrifood.jpg', tech: ['Illustrator', 'Photoshop', 'Figma'], desc: 'Logo, charte graphique et supports pour une chaîne de restauration rapide.', exp :'' },
+  { id: 4, title: 'Campagne Social Media', category: 'Marketing', image: '/images/portfolio/social.jpg', tech: ['Meta Ads', 'Canva', 'Analytics'], desc: '+300% d\'engagement et 2 500 nouveaux abonnés en 30 jours.', exp :'' },
+  { id: 5, title: 'Portail RH Entreprise', category: 'Web', image: '/images/portfolio/rh.jpg', tech: ['Next.js', 'PostgreSQL', 'Tailwind'], desc: 'Système de gestion RH avec congés, paie et évaluation des performances.', exp :'' },
+  { id: 6, title: 'App Fintech Mobile Money', category: 'Mobile', image: '/images/portfolio/fintech.jpg', tech: ['Flutter', 'Laravel', 'MTN API'], desc: 'Transfert d\'argent et paiement de factures intégré aux APIs Mobile Money.', exp :'' },
+  { id: 7, title: 'Brand Kit StartUP Tech', category: 'Design', image: '/images/portfolio/brand.jpg', tech: ['Figma', 'After Effects', 'Illustrator'], desc: 'Kit de marque complet avec animations, templates et pitch deck.', exp :'' },
+  { id: 8, title: 'Stratégie SEO & Contenu', category: 'Marketing', image: '/images/portfolio/seo.jpg',  tech: ['SEMrush', 'WordPress', 'GA4'], desc: 'Audit SEO et link building ayant doublé le trafic organique en 3 mois.', exp :'' },
+  { id: 9, title: 'Site Vitrine Cabinet Médical', category: 'Web', image: '/images/portfolio/medical.jpg', tech: ['React', 'Tailwind', 'Prismic'], desc: 'Site de présentation avec prise de rendez-vous en ligne et blog médical.', exp :'' },
 ]
 
 const statsData = [
@@ -111,6 +113,7 @@ const PortfolioPage = () => {
                       {project.title}
                     </h3>
                     <p className="text-gray-body text-sm leading-relaxed mb-4 line-clamp-2">{project.desc}</p>
+                    {project.category == 'Web' || project.category == 'Marketing' ? <span style={{color:'blue', fontSize:'12px', display:'flex', gap:'10px', margin:'5px 0px 10px 0px'}}><a target='_blank' href={project.exp}>Visiter</a> <FaArrowRight/> </span> : <span style={{color:'blue', fontSize:'12px', display:'flex', gap:'10px', margin:'5px 0px 10px 0px'}}><a target='_blank' href={project.exp}>Télécharger</a> <FaUpload/> </span>}
                     <div className="flex flex-wrap gap-1.5">
                       {project.tech.map((t) => (
                         <span key={t} className="bg-gray-bg text-gray-body text-[11px] font-medium px-2.5 py-0.5 rounded-full border border-gray-border font-sans">

@@ -65,10 +65,10 @@ const CTALink = ({ label, to, variant }) => {
 
 const Hero = ({
   badge = 'Yaoundé, Cameroun',
-  badgeText = 'Innovating to transform Africa through technology',
+  badgeText = 'Innover pour transformer l\'Afrique par la technologie',
   title = "L'Afrique Se Transforme",
   titleGradient = 'Par Le Digital',
-  subtitle = "AFRIKTECH SAS propulse votre entreprise dans l'ère numérique — développement web & mobile, design et marketing digital.",
+  subtitle = "AFRIKTECH SAS propulse votre entreprise dans l'ère numérique à travers le développement web & mobile, le design et le marketing digital.",
   image = '/images/heros/heros.jpg',
   ctaPrimary = { label: 'Découvrir nos services', to: 'services' },
   ctaSecondary = { label: 'Voir nos réalisations', to: '/portfolio' },
@@ -300,6 +300,7 @@ const Hero = ({
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '18px' }}>
                   {[
                     { label: 'Développement Web',  badge: 'Expert',      color: '#3b82f6' },
+                    { label: 'Développement Mobile',  badge: 'Performant',      color: '#4ca3fa' },
                     { label: 'Design Graphique',    badge: 'Créatif',     color: '#8b5cf6' },
                     { label: 'Marketing Digital',   badge: 'Stratégique', color: '#f59e0b' },
                     { label: 'Analyse UML',         badge: 'Précis',      color: '#10b981' },
@@ -353,7 +354,7 @@ const Hero = ({
                 transition={{ duration: 0.4, delay: 1.0, ease: 'easeOut' }}
                 className="absolute z-20"
                 style={{
-                  bottom: '4px', right: '-12px',
+                  bottom: '-70px', right: '-12px',
                   padding: '11px 14px',
                   borderRadius: '12px',
                   background: 'rgba(255,255,255,0.06)',
