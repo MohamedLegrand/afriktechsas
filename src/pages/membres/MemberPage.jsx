@@ -94,7 +94,7 @@ const MemberPage = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.42 }}
-                className="text-gray-400 text-sm italic max-w-xl"
+                className="text-white text-sm italic max-w-xl"
               >
                 "{member.tagline}"
               </motion.p>
@@ -125,8 +125,8 @@ const MemberPage = () => {
           </h2>
           <div className="space-y-5">
             {member.bio.map((paragraph, i) => (
-              <p key={i} className="text-gray-600 leading-relaxed text-base">
-                {paragraph}
+              <p key={i} className="text-gray-600 leading-relaxed text-base text-justify">
+                <span className='w-10 inline-block'></span> {paragraph}
               </p>
             ))}
           </div>

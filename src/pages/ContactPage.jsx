@@ -10,7 +10,7 @@ const contactInfo = [
   { Icon: FaLocationDot, label: 'Adresse',   value: 'Yaoundé, Cameroun',                      href: null },
   { Icon: FaPhone,  label: 'Téléphone', value: '+237 657 37 56 52',                       href: 'https://wa.me/237657375652' },
   { Icon: FaPhone,  label: 'Téléphone', value: '+237 657 97 69 00',                       href: 'https://wa.me/237657976900' },
-  { Icon: FaEnvelope,   label: 'Email',     value: 'contact@afriktechsas.com',                href: 'mailto:ngueffonelson@gmail.com' },
+  { Icon: FaEnvelope,   label: 'Email',     value: 'contact@afriktechsas.com',                href: 'mailto:afriktechsas@gmail.com' },
   { Icon: FaClock,  label: 'Horaires',  value: 'Lun – Ven : 8h00 – 18h00',               href: null },
 ]
 

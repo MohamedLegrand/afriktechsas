@@ -25,16 +25,16 @@ export const members = [
     image: '/images/membres/nelson.png',
     tagline: 'Un développeur Full Stack passionné, qui transforme des idées complexes en applications simples et efficaces.',
     bio: [
-      "NGUEFFO Nelson est un développeur Full Stack confirmé, spécialisé dans la conception et le développement d'applications web complètes. Son profil couvre l'ensemble du cycle de développement : de la maquette à la mise en ligne, en passant par l'intégration des données et la sécurisation des accès.",
-      "Côté frontend, Nelson maîtrise ReactJS avec une attention particulière portée à la qualité de l'expérience utilisateur. Il conçoit des interfaces dynamiques, responsives et accessibles, pensées pour engager les utilisateurs et faciliter leur parcours dans l'application.",
-      "Sur la partie backend, Nelson s'appuie sur Django, le framework Python robuste et éprouvé, pour construire des APIs fiables et des logiques métier solides. Il travaille de pair avec PostgreSQL pour la gestion des données relationnelles, en mettant l'accent sur la normalisation des bases, les performances des requêtes et la sécurité des données.",
+      "NGUEFFO Nelson est un développeur Full Stack confirmé, spécialisé dans la conception et le développement d'applications web et mobile complètes. Son profil couvre l'ensemble du cycle de développement : de la maquette à la mise en ligne, en passant par l'intégration des données et la sécurisation des accès.",
+      "Côté frontend, Nelson maîtrise ReactJS et Flutter avec une attention particulière portée à la qualité de l'expérience utilisateur. Il conçoit des interfaces dynamiques, responsives et accessibles, pensées pour engager les utilisateurs et faciliter leur parcours dans l'application.",
+      "Sur la partie backend, Nelson s'appuie sur Django, le framework Python robuste et éprouvé, pour construire des APIs fiables et des logiques métier solides. Il travaille de pair avec PostgreSQL et MySQL pour la gestion des données relationnelles, en mettant l'accent sur la normalisation des bases, les performances des requêtes et la sécurité des données.",
       "Nelson est reconnu au sein de l'équipe pour sa capacité à livrer des fonctionnalités complexes dans des délais serrés, sa rigueur dans l'écriture du code et son sens inné de la collaboration. Curieux et en veille technologique permanente, il pousse continuellement ses compétences pour intégrer les meilleures pratiques du secteur.",
     ],
     skills: [
-      { category: 'Frontend', items: ['ReactJS', 'JavaScript ES6+', 'HTML5 / CSS3', 'Tailwind CSS'] },
+      { category: 'Frontend', items: ['ReactJS', 'Flutter', 'JavaScript ES6+', 'HTML5 / CSS3', 'Tailwind CSS'] },
       { category: 'Backend', items: ['Python', 'Django', 'API RESTful', 'Django ORM'] },
-      { category: 'Base de données', items: ['PostgreSQL', 'SQL', 'Modélisation relationnelle'] },
-      { category: 'Outils', items: ['Git', 'Docker', 'Postman', 'VS Code'] },
+      { category: 'Base de données', items: ['PostgreSQL', 'MySQL', 'SQL', 'Modélisation relationnelle'] },
+      { category: 'Outils', items: ['Git', 'Thunder Client', 'Postman', 'VS Code', 'Stitch'] },
     ],
   },
   {
@@ -58,7 +58,7 @@ export const members = [
   },
   {
     slug: 'tabou',
-    name: 'M. TABOU',
+    name: 'M. TABOU Leonardi',
     role: 'Spécialiste Cybersécurité & Trading',
     image: '/images/membres/tabou.jpg',
     tagline: "Protéger les systèmes, analyser les marchés — deux disciplines qui exigent la même rigueur absolue.",
@@ -77,7 +77,7 @@ export const members = [
   },
   {
     slug: 'kwidja-nana',
-    name: 'M. KWIDJA NANA',
+    name: 'M. KUIDJA NANA',
     role: 'Développeur Mobile Full Stack & Analyste',
     image: '/images/membres/nana.jpg',
     tagline: "Chaque application mobile est une porte d'entrée vers de nouvelles possibilités — je les construis pour qu'elles durent.",
@@ -95,8 +95,8 @@ export const members = [
     ],
   },
   {
-    slug: 'tanedjeu-doncfack',
-    name: 'M. TANEDJEU Doncfack',
+    slug: 'tanedjeu-donfack',
+    name: 'M. TANEDJEU Donfack',
     role: 'Développeur Full Stack',
     image: '/images/membres/tanedjeu.jpeg',
     tagline: "Un code propre, une architecture solide — la base de tout projet qui dure.",
@@ -115,12 +115,12 @@ export const members = [
   },
   {
     slug: 'chatelain',
-    name: 'M. CHATELAIN',
+    name: 'M. KAMOGNE Chatelain',
     role: 'Développeur Mobile Full Stack',
     image: '/images/membres/chatelain.jpg',
     tagline: "Je construis des expériences mobiles qui connectent les gens — avec fluidité, performance et simplicité.",
     bio: [
-      "M. CHATELIN est un développeur Mobile Full Stack talentueux, spécialisé dans la création d'applications mobiles complètes pour iOS et Android. Passionné par l'univers du mobile depuis ses débuts, il excelle dans la conception d'expériences utilisateurs fluides et engageantes qui répondent aux usages réels du quotidien.",
+      "M. KAMOGNE Chatelain est un développeur Mobile Full Stack talentueux, spécialisé dans la création d'applications mobiles complètes pour iOS et Android. Passionné par l'univers du mobile depuis ses débuts, il excelle dans la conception d'expériences utilisateurs fluides et engageantes qui répondent aux usages réels du quotidien.",
       "Son expertise mobile couvre l'ensemble du cycle de développement applicatif : de la conception de l'architecture technique à l'implémentation des fonctionnalités, en passant par l'intégration des APIs, la gestion de l'état de l'application et l'optimisation des performances. Il maîtrise les outils et frameworks cross-platform modernes pour livrer des applications de qualité native sur les deux plateformes simultanément.",
       "CHATELIN prend en charge non seulement la partie client (frontend mobile) mais aussi les composants backend nécessaires à son fonctionnement : gestion des utilisateurs, stockage des données, synchronisation en temps réel et notifications. Cette vision Full Stack lui permet d'être autonome sur l'ensemble d'un projet mobile, de la première ligne de code jusqu'à la publication sur le Google Play Store et l'App Store.",
       "Reconnu pour son sens du détail et son exigence en matière de qualité d'expérience utilisateur, CHATELIN apporte à chaque projet une attention particulière aux micro-interactions, aux animations et aux performances d'exécution — ces éléments qui font la différence entre une application acceptable et une application que les utilisateurs adorent utiliser.",
