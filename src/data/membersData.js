@@ -132,4 +132,20 @@ export const members = [
       { category: 'Publication & Outils', items: ['Google Play Store', 'App Store', 'Git', 'Figma'] },
     ],
   },
+  {
+    slug: 'ornella-nanga',
+    name: 'Mlle. NANGA MVONDO BERNADETTE ORNELLA',
+    role: 'Analyste UML',
+    image: '/images/membres/ornella.jpeg',
+    tagline: "L'analyse des systèmes d'information est un art — je transforme les besoins en modèles clairs et exploitables.",
+    bio: [
+      "ORNELLA NANGA est une analyste UML passionnée, spécialisée dans l'analyse et la modélisation des systèmes d'information. Elle excelle dans la transformation des besoins fonctionnels en modèles UML clairs et exploitables, facilitant ainsi la communication entre les parties prenantes et les équipes de développement.",
+      "Avec une solide formation en ingénierie logicielle, ORNELLA maîtrise les techniques de modélisation UML pour représenter graphiquement les architectures des systèmes informatiques. Elle est particulièrement efficace dans l'identification et l'analyse des exigences, ainsi que dans la conception de diagrammes de cas d'utilisation, de séquence, d'activité et de classe.",
+      "ORNELLA est reconnue pour son attention aux détails et sa capacité à simplifier des problèmes complexes en modèles compréhensibles. Son approche méthodique permet de garantir que les solutions développées répondent précisément aux besoins identifiés.",
+      "Dans l'équipe, ORNELLA joue un rôle clé dans l'analyse des besoins et la conception des architectures logicielles, contribuant ainsi à la réussite des projets informatiques."
+    ],
+    skills: [
+      { category: 'Modélisation UML', items: ['Power AMC'] },
+    ],
+  },
 ]
